@@ -8,16 +8,14 @@ header, footer {
   background-color: #202020; color: white; text-align: center; padding: 1em 0; 
 }
 .wrap { 
-  display: flex; justify-content: space-between; flex-wrap: wrap; padding: 20px; max-width: 1500px; margin: 12px auto; 
+  display: flex; flex-wrap: wrap; gap: 12px; padding: 20px; max-width: 1500px; margin: 12px auto; 
 }
 .col { 
-  background-color: #f1eded; padding: 15px; box-shadow: 0 0 10px #0000001a; 
+  background-color: #f1eded; padding: 15px; box-shadow: 0 0 10px #0000001a; flex: 1 1 100%;
 }
 .left, .right { 
-  width: 20%; 
 }
 .center { 
-  width: 55%; 
 }
 h1, h2 { 
   margin-top: 0; 
@@ -32,12 +30,10 @@ ul li {
   clear: both; 
 }
 
-@media (max-width: 920px) {
-  .left, .center { width: 48%; }
-  .right { width: 100%; margin-top: 12px; }
+@media (min-width: 600px) {
+  .col { flex: 1 1 48%; }
 }
 
-@media (max-width: 600px) {
-  .left, .center, .right { width: 100%; margin: 0 0 12px 0; }
-  .wrap { padding: 12px; }
+@media (min-width: 920px) {
+  .col { flex: 1 1 30%; }
 }
